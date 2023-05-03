@@ -1,11 +1,13 @@
-import React, { useEffect, useMemo } from 'react';
+import React, { useCallback, useEffect, useMemo } from 'react';
 import { observer } from 'mobx-react-lite';
+import { SelectChangeEvent } from '@mui/material/Select';
 import Card from 'src/components/ui/atoms/card/Card';
-import ProductTypeSelect from 'src/components/ui/molecules/productTypeSelect/ProductTypeSelect';
+import ProductTypeSelect from 'src/modules/products/presentation/list/view/components/productTypeSelect/ProductTypeSelect';
 import NoData from 'src/components/ui/molecules/placeholders/noData/NoData';
 import { useProductListContext } from '../provider';
-import { getChartData } from '../../utils/chartData';
+import { getChartData } from '../utils/chartData';
 import MonthlyChart from './components/MonthlyChart';
+import { ProductTypes } from '../../../domain/enums/products';
 
 const ListView: React.FC = () => {
   const vm = useProductListContext();
@@ -18,12 +20,20 @@ const ListView: React.FC = () => {
 
   const chartData = useMemo(() => getChartData(vm.products), [vm.products]);
 
+  const handleProductTypeSelect = useCallback(async (event: SelectChangeEvent) => {
+    await vm.changeProductType(event.target.value as ProductTypes);
+  }, [vm]);
+
+  if (vm.products.length === 0 && !vm.isLoading) {
+    return <NoData>Нет данных</NoData>;
+  }
+
   return (
     <>
       <Card>
-        <ProductTypeSelect />
+        <ProductTypeSelect onChange={handleProductTypeSelect} value={vm.productType} disabled={vm.isLoading} />
       </Card>
-      {vm.products.length ? <MonthlyChart data={chartData} /> : <NoData>Нет данных</NoData>}
+      <MonthlyChart data={chartData} isLoading={vm.isLoading} />
     </>
   );
 }

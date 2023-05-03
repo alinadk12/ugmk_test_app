@@ -1,5 +1,6 @@
 import { Product } from '../../../domain/models/Product';
+import { ProductTypes } from '../../../domain/enums/products';
 
 export interface IProductsListRepository {
-    getList(): Promise<Product[]>,
+  getList(type: ProductTypes): Promise<Product[]>,
 }

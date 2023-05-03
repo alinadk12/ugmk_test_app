@@ -1,7 +1,7 @@
 import dayjs from 'dayjs';
-import { Product } from '../../domain/models/Product';
-import { IChartData } from '../list/interfaces/IChartData';
-import { DATE_FORMAT } from '../list/constants';
+import { Product } from '../../../domain/models/Product';
+import { IChartData } from '../interfaces/IChartData';
+import { DATE_FORMAT } from '../constants';
 
 import customParseFormat from 'dayjs/plugin/customParseFormat';
 dayjs.extend(customParseFormat);

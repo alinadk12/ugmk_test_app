@@ -6,7 +6,7 @@ const useStyles = makeStyles<Theme>({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    height: 'calc(100vh - 100px)'
+    height: '50vh'
   }
 });
 
