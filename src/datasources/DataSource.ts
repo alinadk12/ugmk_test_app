@@ -1,19 +1,22 @@
-export class DataSource {
-  private static _instance: DataSource;
+import { IDataStore } from 'src/storages/interfaces/IDataStore';
+import { IDataSource, DataType } from './interfaces/IDataSource';
 
-  private constructor() {}
+export class DataSource implements IDataSource{
+  constructor(private store: IDataStore) {}
 
-  public static getInstance(): DataSource {
-    if (!DataSource._instance) {
-      DataSource._instance = new DataSource();
+  private async fetchData() {
+    const response = await fetch('http://localhost:3001/products');
+    return await response.json();
+  }
+
+  public async getProductList(): Promise<DataType[]> {
+    let data = this.store.get();
+
+    if (data.length === 0) {
+      data = await this.fetchData();
+      this.store.set(data);
     }
 
-    return DataSource._instance;
-  }
-
-  async getProductList() {
-    // const response await fetch('')
+    return data;
   }
 }
-
-export const ds = DataSource.getInstance();
