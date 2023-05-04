@@ -3,4 +3,5 @@ import { IProductInput } from '../../modules/products/domain/interfaces/IProduct
 
 export interface IDataSource {
   getProductList(type: ProductTypes): Promise<IProductInput[]>,
+  getProductsByFactoryAndMonth(factoryId: number, month: number): Promise<IProductInput[]>,
 }

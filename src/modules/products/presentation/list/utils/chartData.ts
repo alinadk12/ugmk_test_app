@@ -1,9 +1,9 @@
 import dayjs from 'dayjs';
+import customParseFormat from 'dayjs/plugin/customParseFormat';
+import { DATE_FORMAT } from 'src/constants/date';
 import { Product } from '../../../domain/models/Product';
 import { IChartData } from '../interfaces/IChartData';
-import { DATE_FORMAT } from '../constants';
 
-import customParseFormat from 'dayjs/plugin/customParseFormat';
 dayjs.extend(customParseFormat);
 
 export const getChartData = (data: Product[]): IChartData => {

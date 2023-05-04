@@ -1,5 +1,10 @@
+import dayjs from 'dayjs';
+import customParseFormat from 'dayjs/plugin/customParseFormat';
+import { DATE_FORMAT } from 'src/constants/date';
 import { IDataStorage } from './interfaces/IDataStorage';
 import { IDataItem } from './interfaces/IDataItem';
+
+dayjs.extend(customParseFormat);
 
 class DataStorage implements IDataStorage{
   private static _instance: IDataStorage;
@@ -22,6 +27,12 @@ class DataStorage implements IDataStorage{
     }
 
     return this.getListByProductType(type);
+  }
+
+  public getByFactoryAndMonth(factoryId: number, month: number): IDataItem[] {
+    return this._data.filter((item) => (
+      item.factory_id === factoryId && dayjs(item.date, DATE_FORMAT).get('month') === month - 1
+    ));
   }
 
   public set(data: IDataItem[]) {

@@ -12,7 +12,7 @@ export const router = createBrowserRouter([
     errorElement: <NotFoundError />,
   },
   {
-    path: '/details',
+    path: '/details/:factoryId/:month',
     element: <ProductDetails />,
   }
 ]);

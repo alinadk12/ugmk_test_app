@@ -4,6 +4,6 @@ export enum FactoryIds {
 }
 
 export enum FactoryNames {
-  FACTORY_A = 'Фабрика А',
-  FACTORY_B = 'Фабрика Б',
+  FACTORY_A = 'А',
+  FACTORY_B = 'Б',
 }

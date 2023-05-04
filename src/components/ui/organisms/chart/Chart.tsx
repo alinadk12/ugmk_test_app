@@ -22,6 +22,18 @@ const Chart: React.FC<ChartProps> = (props) => {
         text: ''
       }
     },
+    plotOptions: {
+      pie: {
+        cursor: 'pointer',
+        dataLabels: {
+          enabled: false
+        },
+        showInLegend: true
+      },
+      column: {
+        cursor: 'pointer',
+      }
+    },
     legend: {
       symbolRadius: 0,
       labelFormatter: function() {

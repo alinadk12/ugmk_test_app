@@ -11,12 +11,22 @@ export class DataSource implements IDataSource{
     return await response.json();
   }
 
-  public async getProductList(type: ProductTypes): Promise<IProductInput[]> {
+  private async checkAndSetData(): Promise<void> {
     if (this.storage.isEmpty()) {
       let data = await this.fetchData();
       this.storage.set(data);
     }
+  }
+
+  public async getProductList(type: ProductTypes): Promise<IProductInput[]> {
+    await this.checkAndSetData();
 
     return this.storage.get(type);
+  }
+
+  public async getProductsByFactoryAndMonth(factoryId: number, month: number): Promise<IProductInput[]> {
+    await this.checkAndSetData();
+
+    return this.storage.getByFactoryAndMonth(factoryId, month);
   }
 }

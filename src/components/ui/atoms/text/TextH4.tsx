@@ -7,7 +7,7 @@ type TextH4Props = {
 
 const TextH4: React.FC<TextH4Props> = ({ children }) => {
   return (
-    <Typography variant="h4">{children}</Typography>
+    <Typography variant="h4" fontWeight="bold">{children}</Typography>
   );
 }
 
