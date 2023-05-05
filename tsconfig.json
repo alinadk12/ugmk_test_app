@@ -25,10 +25,12 @@
     "allowSyntheticDefaultImports": true,
     "useDefineForClassFields": true,
     "baseUrl": ".",
+    "plugins": [{ "name": "typescript-plugin-css-modules" }]
   },
   "include": [
     "**/*.ts",
-    "**/*.tsx"
+    "**/*.tsx",
+    "theme.d.ts"
   ],
   "exclude": [
     "node_modules"

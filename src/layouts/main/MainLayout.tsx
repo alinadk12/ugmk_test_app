@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from '../header/Header';
-import useStyles from './styles';
+import styles from './MainLayout.module.css';
 
 type MainLayoutProps = {
   children: React.ReactNode,
@@ -8,8 +8,6 @@ type MainLayoutProps = {
 };
 
 const MainLayout: React.FC<MainLayoutProps> = ({children, showHeader}) => {
-  const styles = useStyles();
-
   return (
     <div className={styles.body}>
       {showHeader && <Header />}

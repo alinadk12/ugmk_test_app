@@ -1,10 +1,8 @@
 import React from 'react';
 import CircularProgress from '@mui/material/CircularProgress';
-import useStyles from './styles';
+import styles from './Loader.module.css';
 
 const Loader: React.FC = () => {
-  const styles = useStyles();
-
   return (
     <div className={styles.loader}>
       <CircularProgress />

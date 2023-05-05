@@ -1,10 +1,8 @@
 import React from 'react';
 import BackButton from 'src/components/ui/molecules/buttons/backButton/BackButton';
-import useStyles from './styles';
+import styles from './Header.module.css';
 
 const Header: React.FC = () => {
-  const styles = useStyles();
-
   return (
     <div className={styles.wrapper}>
       <BackButton />

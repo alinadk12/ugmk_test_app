@@ -8,7 +8,7 @@ import Loader from 'src/components/ui/atoms/loader/Loader';
 import { ProductNames } from '../../../../domain/enums/products';
 import { FactoryIds, FactoryNames } from '../../../../domain/enums/factory';
 import { IChartData } from '../../interfaces/IChartData';
-import useStyles from './styles';
+import styles from './DetailsChart.module.css';
 
 type DetailsChartProps = {
   isLoading: boolean,
@@ -16,8 +16,6 @@ type DetailsChartProps = {
 }
 
 const DetailsChart: React.FC<DetailsChartProps> = ({ data, isLoading }) => {
-  const styles = useStyles();
-
   const options = useMemo(() => (
     {
       chart: {

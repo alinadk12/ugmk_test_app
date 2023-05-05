@@ -1,0 +1,10 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+.wrapper > div {
+  margin-left: 8px;
+}

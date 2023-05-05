@@ -1,13 +1,11 @@
 import React from 'react';
-import useStyles from './styles';
+import styles from './Card.module.css';
 
 type CardProps = {
   children: React.ReactNode,
 }
 
 const Card: React.FC<CardProps> = ({ children }) => {
-  const styles = useStyles();
-
   return (
     <section className={styles.wrapper}>
       {children}

@@ -1,15 +1,13 @@
 import React from 'react';
 import TextH4 from 'src/components/ui/atoms/text/TextH4';
 import Card from '../../../atoms/card/Card';
-import useStyles from './styles';
+import styles from './NoData.module.css';
 
 type NoDataProps = {
   children: React.ReactNode;
 };
 
 const NoData: React.FC<NoDataProps> = ({ children }) => {
-  const styles = useStyles();
-
   return (
     <Card>
       <div className={styles.wrapper}>

@@ -1,0 +1,12 @@
+.wrapper {
+  position: absolute;
+  left: 10px;
+}
+
+.wrapper > button {
+  color: var(--gray-900);
+}
+
+.text {
+  margin-left: 4px;
+}

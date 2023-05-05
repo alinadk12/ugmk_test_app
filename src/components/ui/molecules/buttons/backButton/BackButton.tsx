@@ -2,10 +2,9 @@ import React, { useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import TextButton from '../../../atoms/buttons/TextButton';
-import useStyles from './styles';
+import styles from './BackButton.module.css';
 
 const BackButton: React.FC = () => {
-  const styles = useStyles();
   const navigate = useNavigate();
 
   const backClickHandler = useCallback(() => navigate(-1), [navigate]);

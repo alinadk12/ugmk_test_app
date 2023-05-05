@@ -4,7 +4,7 @@ import Select from 'src/components/ui/atoms/select/Select';
 import Text from 'src/components/ui/atoms/text/Text';
 import { ProductTypes } from '../../../../../domain/enums/products';
 import { options } from './options';
-import useStyles from './styles';
+import styles from './ProductTypeSelect.module.css';
 
 type ProductTypeSelectProps = {
   value: ProductTypes,
@@ -13,8 +13,6 @@ type ProductTypeSelectProps = {
 };
 
 const ProductTypeSelect: React.FC<ProductTypeSelectProps> = ({ value, disabled, onChange }) => {
-  const styles = useStyles();
-
   return (
     <div className={styles.wrapper}>
       <Text>Фильтр по типу продукции</Text>
