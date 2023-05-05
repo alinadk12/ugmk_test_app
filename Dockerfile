@@ -12,7 +12,7 @@ COPY package.json ./
 
 COPY package-lock.json ./
 
-RUN npm install --legacy-peer-deps --frozen-lockfile
+RUN npm install --frozen-lockfile
 
 # add app
 COPY . ./
