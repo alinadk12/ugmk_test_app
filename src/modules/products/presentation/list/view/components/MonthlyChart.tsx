@@ -3,19 +3,18 @@ import Highcharts from 'highcharts';
 import { useNavigate } from 'react-router-dom';
 import red from '@mui/material/colors/red';
 import indigo from '@mui/material/colors/indigo';
+
 import Card from 'src/components/ui/atoms/card/Card';
 import Chart from 'src/components/ui/organisms/chart/Chart';
-import Loader from 'src/components/ui/atoms/loader/Loader';
 import { MONTH_RANGE } from 'src/constants/date';
-import { FactoryIds, FactoryNames } from '../../../../domain/enums/factory';
-import { IChartData } from '../../interfaces/IChartData';
+import { FactoryIds, FactoryNames } from 'src/modules/products/domain/enums/factory';
+import { IChartData } from 'src/modules/products/presentation/list/interfaces/IChartData';
 
 type MonthlyChartProps = {
   data: IChartData,
-  isLoading: boolean,
 };
 
-const MonthlyChart: React.FC<MonthlyChartProps> = ({ data, isLoading }) => {
+const MonthlyChart: React.FC<MonthlyChartProps> = ({ data }) => {
   const navigate = useNavigate();
 
   const handleColumnClick = (category: string | number, factoryId: number) => {
@@ -54,7 +53,7 @@ const MonthlyChart: React.FC<MonthlyChartProps> = ({ data, isLoading }) => {
 
   return (
     <Card>
-      {isLoading ? <Loader /> : <Chart options={options} />}
+      <Chart options={options} />
     </Card>
   );
 }

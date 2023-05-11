@@ -1,8 +1,10 @@
 import React, { createContext, useContext } from 'react';
 import { observer } from 'mobx-react-lite';
+
 import { productTypeStorage, dataStorage } from 'src/storages';
-import { DataSource } from 'src/datasources/DataSource';
-import { ProductsListRepository } from '../../data/list/repository';
+import { DataSource } from 'src/modules/products/data/datasources/DataSource';
+import { ProductsListRepository } from 'src/modules/products/data/repositories/list/repository';
+
 import { ProductListViewModel } from './viewModel';
 
 const ds = new DataSource(dataStorage);

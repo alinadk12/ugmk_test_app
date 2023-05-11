@@ -1,7 +1,8 @@
 import { IDataStorage } from 'src/storages/dataStorage/interfaces/IDataStorage';
+import { ProductTypes } from 'src/modules/products/domain/enums/products';
+import { IProductInput } from 'src/modules/products/domain/interfaces/IProductInput';
+
 import { IDataSource } from './interfaces/IDataSource';
-import { ProductTypes } from '../modules/products/domain/enums/products';
-import { IProductInput } from '../modules/products/domain/interfaces/IProductInput';
 
 export class DataSource implements IDataSource{
   constructor(private storage: IDataStorage) {}

@@ -1,7 +1,8 @@
 import { ApiError } from 'src/errors/ApiError';
-import { IDataSource } from 'src/datasources/interfaces/IDataSource';
+import { IDataSource } from 'src/modules/products/data/datasources/interfaces/IDataSource';
+import { Product } from 'src/modules/products/domain/models/Product';
+
 import { IProductsDetailsRepository } from './interfaces/IProductsDetailsRepository';
-import { Product } from '../../domain/models/Product';
 
 export class ProductsDetailsRepository implements IProductsDetailsRepository {
   constructor(private ds: IDataSource) {}

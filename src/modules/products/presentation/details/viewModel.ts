@@ -1,11 +1,13 @@
 import { action, computed, makeObservable, observable, runInAction, toJS } from 'mobx';
+
 import { ValidationError } from 'src/errors/ValidationError';
-import { IProductsDetailsRepository } from '../../data/details/interfaces/IProductsDetailsRepository';
-import { Product } from '../../domain/models/Product';
+import { IProductsDetailsRepository } from 'src/modules/products/data/repositories/details/interfaces/IProductsDetailsRepository';
+import { Product } from 'src/modules/products/domain/models/Product';
+
 import { isValid } from './utils/validation';
 
 export class DetailsViewModel {
-  @observable public isLoading: boolean = false;
+  @observable public isLoading: boolean = true;
 
   @observable private _products: Product[] = [];
 

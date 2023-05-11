@@ -1,13 +1,16 @@
 import React, { useCallback, useEffect, useMemo } from 'react';
 import { observer } from 'mobx-react-lite';
 import { SelectChangeEvent } from '@mui/material/Select';
+
+import Loader from 'src/components/ui/atoms/loader/Loader';
 import Card from 'src/components/ui/atoms/card/Card';
-import ProductTypeSelect from 'src/modules/products/presentation/list/view/components/productTypeSelect/ProductTypeSelect';
 import NoData from 'src/components/ui/molecules/placeholders/noData/NoData';
-import { useProductListContext } from '../provider';
-import { getChartData } from '../utils/chartData';
+import { ProductTypes } from 'src/modules/products/domain/enums/products';
+import ProductTypeSelect from 'src/modules/products/presentation/list/view/components/productTypeSelect/ProductTypeSelect';
+import { useProductListContext } from 'src/modules/products/presentation/list/provider';
+import { getChartData } from 'src/modules/products/presentation/list/utils/chartData';
+
 import MonthlyChart from './components/MonthlyChart';
-import { ProductTypes } from '../../../domain/enums/products';
 
 const ListView: React.FC = () => {
   const vm = useProductListContext();
@@ -33,7 +36,7 @@ const ListView: React.FC = () => {
       <Card>
         <ProductTypeSelect onChange={handleProductTypeSelect} value={vm.productType} disabled={vm.isLoading} />
       </Card>
-      <MonthlyChart data={chartData} isLoading={vm.isLoading} />
+      {vm.isLoading ? <Loader /> : <MonthlyChart data={chartData} /> }
     </>
   );
 }

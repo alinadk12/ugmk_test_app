@@ -1,7 +1,8 @@
 import React from 'react';
+
 import MainLayout from 'src/layouts/main/MainLayout';
-import ListView, { ProductListProvider } from 'src/modules/products/presentation/list';
 import ErrorBoundary from 'src/components/errors/ErrorBoundary';
+import ListView, { ProductListProvider } from 'src/modules/products/presentation/list';
 
 const ProductList: React.FC = () => {
   return (

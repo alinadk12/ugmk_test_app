@@ -1,5 +1,6 @@
 import React from 'react';
-import CommonError from '../../pages/errors/CommonError';
+
+import CommonError from 'src/pages/errors/CommonError';
 
 type ErrorBoundaryState = {
   hasError: boolean,

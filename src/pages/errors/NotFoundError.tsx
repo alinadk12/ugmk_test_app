@@ -1,8 +1,10 @@
 import React from 'react';
 
+import styles from './Error.module.css';
+
 const NotFoundError: React.FC = () => {
   return (
-    <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh'}}>
+    <div className={styles.wrapper}>
       <h1>Страница не найдена!</h1>
     </div>
   );

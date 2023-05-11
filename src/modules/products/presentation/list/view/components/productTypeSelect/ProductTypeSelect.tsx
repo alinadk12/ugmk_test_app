@@ -1,8 +1,10 @@
 import React from 'react';
 import { SelectChangeEvent } from '@mui/material/Select';
+
 import Select from 'src/components/ui/atoms/select/Select';
 import Text from 'src/components/ui/atoms/text/Text';
-import { ProductTypes } from '../../../../../domain/enums/products';
+import { ProductTypes } from 'src/modules/products/domain/enums/products';
+
 import { options } from './options';
 import styles from './ProductTypeSelect.module.css';
 

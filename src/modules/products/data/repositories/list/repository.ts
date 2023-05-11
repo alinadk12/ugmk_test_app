@@ -1,8 +1,9 @@
-import { IDataSource } from 'src/datasources/interfaces/IDataSource';
+import { IDataSource } from 'src/modules/products/data/datasources/interfaces/IDataSource';
 import { ApiError } from 'src/errors/ApiError';
-import { Product } from '../../domain/models/Product';
+import { Product } from 'src/modules/products/domain/models/Product';
+import { ProductTypes } from 'src/modules/products/domain/enums/products';
+
 import { IProductsListRepository } from './interfaces/IProductsListRepository';
-import { ProductTypes } from '../../domain/enums/products';
 
 export class ProductsListRepository implements IProductsListRepository {
   constructor(private ds: IDataSource) {}

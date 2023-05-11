@@ -1,6 +1,7 @@
 import { number, string, object, InferType } from 'yup';
+
 import { ValidationError } from 'src/errors/ValidationError';
-import { IProductInput } from '../interfaces/IProductInput';
+import { IProductInput } from 'src/modules/products/domain/interfaces/IProductInput';
 
 export class Product {
   public id: number;

@@ -1,8 +1,10 @@
 import React from 'react';
 
+import styles from './Error.module.css';
+
 const CommonError: React.FC = () => {
   return (
-    <div>Что-то пошло не так...</div>
+    <div className={styles.wrapper}>Что-то пошло не так...</div>
   );
 }
 

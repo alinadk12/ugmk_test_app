@@ -1,5 +1,6 @@
 import { lazy } from 'react';
 import { createBrowserRouter } from 'react-router-dom';
+
 import NotFoundError from 'src/pages/errors/NotFoundError';
 
 const ProductList = lazy(() => import('src/pages/products/list/ProductList'));

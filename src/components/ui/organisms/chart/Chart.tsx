@@ -25,10 +25,15 @@ const Chart: React.FC<ChartProps> = (props) => {
     plotOptions: {
       pie: {
         cursor: 'pointer',
+        showInLegend: true,
         dataLabels: {
-          enabled: false
+          connectorWidth: 0,
+          formatter: function () {
+            return (
+              '<span style="color: ' + this.color + '">' + this.y + '</span>'
+            );
+          }
         },
-        showInLegend: true
       },
       column: {
         cursor: 'pointer',
@@ -39,7 +44,10 @@ const Chart: React.FC<ChartProps> = (props) => {
       labelFormatter: function() {
         return '<span style="color: '+this.color+'">'+ this.name + '</span>';
       }
-    }
+    },
+    accessibility: {
+      enabled: false,
+    },
   } as Highcharts.Options;
 
   const fullOptions = useMemo(() => merge(defaultOptions, options), [options]);

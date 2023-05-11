@@ -1,4 +1,5 @@
 import React from 'react';
+
 import MainLayout from 'src/layouts/main/MainLayout';
 import ErrorBoundary from 'src/components/errors/ErrorBoundary';
 import DetailsView, { ProductDetailsProvider } from 'src/modules/products/presentation/details';

@@ -1,5 +1,7 @@
 import React from 'react';
-import Header from '../header/Header';
+
+import Header from 'src/layouts/header/Header';
+
 import styles from './MainLayout.module.css';
 
 type MainLayoutProps = {

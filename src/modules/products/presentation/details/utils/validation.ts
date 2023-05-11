@@ -1,5 +1,6 @@
 import { number, object } from 'yup';
-import { FactoryIds } from '../../../domain/enums/factory';
+
+import { FactoryIds } from 'src/modules/products/domain/enums/factory';
 
 const paramSchema = object({
   factoryId: number().oneOf(Object.values(FactoryIds) as number[]),

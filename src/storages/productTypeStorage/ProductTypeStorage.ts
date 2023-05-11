@@ -1,5 +1,6 @@
+import { ProductTypes } from 'src/modules/products/domain/enums/products';
+
 import { IProductTypeStorage } from './interfaces/IProductTypeStorage';
-import { ProductTypes } from '../../modules/products/domain/enums/products';
 
 export class ProductTypeStorage implements IProductTypeStorage {
   private static _instance: IProductTypeStorage;

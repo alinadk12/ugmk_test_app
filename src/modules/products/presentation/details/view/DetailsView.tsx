@@ -1,10 +1,12 @@
 import React, { useEffect, useMemo } from 'react';
 import { observer } from 'mobx-react-lite';
 import { useParams } from 'react-router-dom';
+
 import NoData from 'src/components/ui/molecules/placeholders/noData/NoData';
-import { useProductDetailsContext } from '../provider';
+import { useProductDetailsContext } from 'src/modules/products/presentation/details/provider';
+import { getChartData } from 'src/modules/products/presentation/details/utils/chartData';
+
 import DetailsChart from './components/DetailsChart';
-import { getChartData } from '../utils/chartData';
 
 
 const DetailsView: React.FC = () => {

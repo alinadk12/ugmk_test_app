@@ -1,8 +1,9 @@
 import { action, computed, makeObservable, observable, runInAction, toJS } from 'mobx';
+
 import { IProductTypeStorage } from 'src/storages/productTypeStorage/interfaces/IProductTypeStorage';
-import { Product } from '../../domain/models/Product';
-import { IProductsListRepository } from '../../data/list/interfaces/IProductsListRepository';
-import { ProductTypes } from '../../domain/enums/products';
+import { Product } from 'src/modules/products/domain/models/Product';
+import { ProductTypes } from 'src/modules/products/domain/enums/products';
+import { IProductsListRepository } from 'src/modules/products/data/repositories/list/interfaces/IProductsListRepository';
 
 export class ProductListViewModel {
   @observable private _products: Product[] = [];
