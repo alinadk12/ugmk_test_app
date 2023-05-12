@@ -12,7 +12,7 @@ COPY package.json ./
 
 COPY package-lock.json ./
 
-RUN npm install --frozen-lockfile
+RUN npm ci
 
 # add app
 COPY . ./
